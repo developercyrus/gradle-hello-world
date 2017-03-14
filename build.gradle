@@ -1,0 +1,65 @@
+/* 
+============================================================================
+    Reference:
+    1. https://spring.io/guides/gs/gradle/    
+        
+    Environment
+    1. Eclipse 4.6.1 in Windows 7 64bit
+    2. gradle-3.4.1
+       
+    Setup in Development Machine
+    1. install JDK, and setup JAVA_HOME
+    2. install gradle, and setup maven\bin in PATH
+                      
+    
+    1. Open a command prompt in the project path
+    2. gradle clean             
+    3. gradle test 
+    4. gradle build
+    5. gradle run
+    6. gradle clean test build run      
+    7. gradle eclipse                   # generate library for eclipse
+        
+============================================================================
+*/
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+mainClassName = 'hello.HelloWorld'
+
+
+/*
+============================================================================
+ indicates that the build should resolve its dependencies from the Maven Central repository.
+============================================================================
+*/
+repositories {
+    mavenCentral()
+}
+
+/*
+============================================================================
+ how the JAR file will be named
+============================================================================
+*/
+jar {
+    baseName = 'gradle-hello-world'
+    version =  '1.0'
+}
+
+
+/*
+============================================================================
+ declare a single dependency for Joda
+============================================================================
+*/
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
+}

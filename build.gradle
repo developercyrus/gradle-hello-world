@@ -9,7 +9,7 @@
        
     Setup in Development Machine
     1. install JDK, and setup JAVA_HOME
-    2. install gradle, and setup maven\bin in PATH
+    2. install gradle, and setup gradle\bin in PATH
                       
     
     1. Open a command prompt in the project path
